@@ -23,7 +23,7 @@ class WebUserConfig extends GlobalAuthenticationConfigurerAdapter {
 
 			@Override
 			public UserDetails loadUserByUsername(String username) {
-				return new User("user", "password", true, true, true, true, AuthorityUtils.createAuthorityList("USER"));
+				return new User("user", "password", true, true, true, true, AuthorityUtils.createAuthorityList("ADMIN", "USER", "ACTUATOR"));
 			}
 		};
 	}
