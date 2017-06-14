@@ -38,8 +38,8 @@ public class RegistrationControllerTest {
 		@SuppressWarnings("rawtypes")
 		ResponseEntity<Map> entity = this.testRestTemplate.getForEntity(
 				"http://localhost:" + this.port + "/registration?id=1", Map.class);
-
-//		then(entity.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
+		
+		then(entity.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
 	}
 
 	@Test
@@ -48,7 +48,7 @@ public class RegistrationControllerTest {
 		ResponseEntity<Map> entity = this.testRestTemplate.getForEntity(
 				"http://localhost:" + this.mgt + "/info", Map.class);
 
-//		then(entity.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
+		then(entity.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
 	}
 
 }
