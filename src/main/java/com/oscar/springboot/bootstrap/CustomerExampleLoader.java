@@ -27,9 +27,7 @@ public class CustomerExampleLoader implements ApplicationListener<ContextRefresh
 			return;
 		}
 		alreadyInitialised = true;
-		Customer egCustomer = new Customer();
-		egCustomer.setCustomerId("NSW-1");
-		egCustomer.setCustomerName("FirstCustomer");
+		Customer egCustomer = new Customer("NSW-1", "FirstCustomer", "Who", "myemail@gmail.com", "+61423123456");
 		customerService.saveCustomer(egCustomer);
 		log.info("Saved Example customer - internal id: " + egCustomer.getId());
 	}
